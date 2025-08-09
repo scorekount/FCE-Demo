@@ -29,24 +29,24 @@ let points = {}; // User points system
 // Effect definitions
 const EFFECTS = {
   weapons: {
-    pistol_only: { name: "Pistols Only!", duration: 60, cost: 100 },
-    awp_madness: { name: "AWP for Everyone!", duration: 45, cost: 200 },
-    knife_fight: { name: "Knife Fight!", duration: 30, cost: 150 }
+    pistol_only: { name: "Pistols Only!", duration: 120, cost: 100 },
+    awp_madness: { name: "AWP for Everyone!", duration: 120, cost: 200 },
+    nades_only: { name: "Grenades Only!", duration: 60, cost: 150 }
   },
   movement: {
-    speed_boost: { name: "2x Speed", duration: 30, cost: 50 },
+    speed_boost: { name: "1.5x Speed", duration: 30, cost: 50 },
     slow_motion: { name: "Slow Motion", duration: 20, cost: 75 },
-    bunny_hop: { name: "Bunny Hop Mode", duration: 45, cost: 100 }
+    low_gravity: { name: "Moon Gravity", duration: 45, cost: 100 }
   },
   vision: {
-    night_mode: { name: "Lights Out", duration: 60, cost: 125 },
-    disco_mode: { name: "Disco Vision", duration: 30, cost: 80 },
-    upside_down: { name: "Upside Down", duration: 20, cost: 150 }
+    flashbang_party: { name: "Flashbang Spam", duration: 30, cost: 125 },
+    smoke_everywhere: { name: "Smoke Chaos", duration: 45, cost: 80 },
+    fog_of_war: { name: "Heavy Fog", duration: 60, cost: 150 }
   },
   chaos: {
     friendly_fire: { name: "Friendly Fire ON", duration: 45, cost: 300 },
-    one_hp: { name: "1 HP Mode", duration: 30, cost: 250 },
-    randomize_teams: { name: "Team Shuffle", duration: 0, cost: 400 }
+    low_health: { name: "10 HP Mode", duration: 60, cost: 250 },
+    infinite_money: { name: "Max Money", duration: 0, cost: 400 }
   }
 };
 

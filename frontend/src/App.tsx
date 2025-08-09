@@ -9,8 +9,13 @@ function App() {
     <Router>
       <div className="App">
         <Routes>
+          {/* Main voting interface for viewers */}
           <Route path="/" element={<VotingInterface />} />
+          
+          {/* Streamer control panel */}
           <Route path="/streamer" element={<StreamerDashboard />} />
+          
+          {/* Redirect any unknown routes to home */}
           <Route path="*" element={<Navigate to="/" />} />
         </Routes>
       </div>
