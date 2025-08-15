@@ -1,20 +1,23 @@
-/* ScoreKount Fan Controlled Esports Interface */
+/* ScoreKount Fan Controlled Esports Interface - Updated Design */
 .voting-interface-v2 {
   min-height: 100vh;
-  background: #0f0f1f;
+  background: #161433;
   color: #ffffff;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Inter', sans-serif;
 }
 
-/* Header */
+/* Header - Sticky */
 .main-header {
   display: flex;
   align-items: center;
   justify-content: space-between;
   padding: 16px 32px;
-  background: rgba(15, 15, 31, 0.95);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  background: #101026;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
   backdrop-filter: blur(10px);
+  position: sticky;
+  top: 0;
+  z-index: 100;
 }
 
 .header-left {
@@ -23,8 +26,8 @@
 }
 
 .cs2-selector {
-  background: rgba(255, 255, 255, 0.1);
-  border: 1px solid rgba(255, 255, 255, 0.2);
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
   color: white;
   padding: 8px 16px;
   border-radius: 8px;
@@ -47,9 +50,9 @@
 }
 
 .header-nav a {
-  color: rgba(255, 255, 255, 0.7);
+  color: #6965b4;
   text-decoration: none;
-  font-weight: 500;
+  font-weight: 800;
   transition: color 0.2s;
   font-size: 14px;
 }
@@ -61,6 +64,7 @@
 
 .header-nav a.active {
   position: relative;
+  color: #e1be31;
 }
 
 .header-nav a.active::after {
@@ -70,7 +74,7 @@
   left: 0;
   right: 0;
   height: 3px;
-  background: linear-gradient(90deg, #6B46C1 0%, #9333EA 100%);
+  background: linear-gradient(90deg, #e7993a 0%, #e1be31 20%);
   border-radius: 2px;
 }
 
@@ -84,7 +88,7 @@
   display: flex;
   align-items: center;
   gap: 6px;
-  background: rgba(255, 255, 255, 0.1);
+  background: rgba(255, 255, 255, 0.05);
   padding: 8px 16px;
   border-radius: 8px;
   font-weight: 600;
@@ -117,6 +121,7 @@
   padding: 24px;
   max-width: 1600px;
   margin: 0 auto;
+  padding-top: 24px;
 }
 
 .stream-section {
@@ -131,10 +136,10 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background: rgba(255, 255, 255, 0.05);
+  background: #101026;
   border-radius: 16px;
   padding: 24px;
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.05);
 }
 
 .team {
@@ -146,13 +151,14 @@
 .team img {
   width: 60px;
   height: 60px;
-  border-radius: 12px;
+  border-radius: 50%;
   background: rgba(255, 255, 255, 0.1);
+  border: 2px solid rgba(255, 255, 255, 0.1);
 }
 
 .team h3 {
   margin: 0 0 8px 0;
-  font-size: 22px;
+  font-size: 20px;
   font-weight: 700;
 }
 
@@ -160,11 +166,13 @@
   display: flex;
   gap: 12px;
   font-size: 13px;
-  color: rgba(255, 255, 255, 0.7);
+  color: rgba(255, 255, 255, 0.6);
 }
 
 .match-info {
   text-align: center;
+  font-size: 20px;
+  font-weight: 800;
 }
 
 .live-badge {
@@ -209,6 +217,29 @@
   width: 100%;
   height: auto;
   display: block;
+}
+
+.live-indicator-video {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  background: #EF4444;
+  color: white;
+  padding: 6px 14px;
+  border-radius: 6px;
+  font-weight: 700;
+  font-size: 12px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.live-dot {
+  width: 6px;
+  height: 6px;
+  background: white;
+  border-radius: 50%;
+  animation: pulse 1.5s infinite;
 }
 
 .video-controls {
@@ -266,7 +297,7 @@
 .content-tabs {
   display: flex;
   gap: 4px;
-  background: rgba(255, 255, 255, 0.05);
+  background: #101026;
   padding: 4px;
   border-radius: 12px;
 }
@@ -276,8 +307,8 @@
   padding: 12px 24px;
   background: none;
   border: none;
-  color: rgba(255, 255, 255, 0.7);
-  font-weight: 600;
+  color: #6965b4;
+  font-weight: 800;
   cursor: pointer;
   border-radius: 8px;
   transition: all 0.2s;
@@ -289,16 +320,16 @@
 }
 
 .tab.active {
-  background: rgba(139, 92, 246, 0.2);
+  background: rgba(147, 51, 234, 0.15);
   color: white;
 }
 
 /* Fan Control Panel */
 .fan-control-panel {
-  background: rgba(255, 255, 255, 0.05);
+  background: #101026;
   border-radius: 16px;
   padding: 32px;
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.05);
 }
 
 .voting-header {
@@ -311,6 +342,7 @@
 .voting-title-section {
   flex: 1;
   text-align: center;
+  padding-right: 40px;
 }
 
 .voting-header h2 {
@@ -320,12 +352,6 @@
   background: linear-gradient(135deg, #fff, #e0e0ff);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  animation: textGlow 2s ease-in-out infinite;
-}
-
-@keyframes textGlow {
-  0%, 100% { filter: drop-shadow(0 0 20px rgba(147, 51, 234, 0.5)); }
-  50% { filter: drop-shadow(0 0 30px rgba(147, 51, 234, 0.8)); }
 }
 
 .voting-subtitle {
@@ -335,7 +361,7 @@
   gap: 10px;
   margin-top: 8px;
   font-size: 16px;
-  color: rgba(255, 255, 255, 0.8);
+  color: rgba(255, 255, 255, 0.7);
   font-weight: 500;
 }
 
@@ -351,76 +377,33 @@
 
 .current-category {
   margin-top: 16px;
-  font-size: 20px;
+  font-size: 18px;
   font-weight: 700;
   color: #FCD34D;
   text-transform: uppercase;
   letter-spacing: 2px;
-  animation: categoryPulse 2s ease-in-out infinite;
   text-align: center;
 }
 
-@keyframes categoryPulse {
-  0%, 100% { transform: scale(1); }
-  50% { transform: scale(1.05); }
-}
-
-/* Countdown Timer */
+/* Countdown Timer with Ring */
 .countdown-timer {
   position: relative;
-  width: 140px;
-  height: 140px;
+  min-width: 160px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.timer-ring {
+  position: relative;
+  width: 120px;
+  height: 120px;
 }
 
 .timer-svg {
   width: 100%;
   height: 100%;
   transform: rotate(-90deg);
-}
-
-.timer-background {
-  fill: none;
-  stroke: rgba(255, 255, 255, 0.1);
-  stroke-width: 8;
-}
-
-/* Timer styles */
-.timer-svg {
-  width: 100%;
-  height: 100%;
-}
-
-.timer-background {
-  fill: none;
-  stroke: rgba(255, 255, 255, 0.1);
-  stroke-width: 8;
-}
-
-.timer-progress {
-  fill: none;
-  stroke: url(#timer-gradient);
-  stroke-width: 8;
-  stroke-linecap: round;
-  transition: stroke-dasharray 0.3s;
-  filter: drop-shadow(0 0 10px rgba(147, 51, 234, 0.5));
-}
-
-/* Waiting for vote state */
-.waiting-for-vote {
-  text-align: center;
-  padding: 100px 20px;
-}
-
-.waiting-for-vote h2 {
-  font-size: 32px;
-  font-weight: 700;
-  margin-bottom: 16px;
-  color: rgba(255, 255, 255, 0.9);
-}
-
-.waiting-for-vote p {
-  font-size: 18px;
-  color: rgba(255, 255, 255, 0.6);
 }
 
 .timer-content {
@@ -432,81 +415,45 @@
 }
 
 .timer-label {
-  font-size: 12px;
-  color: rgba(255, 255, 255, 0.7);
-  margin-bottom: 4px;
+  font-size: 11px;
+  color: rgba(255, 255, 255, 0.5);
+  margin-bottom: 2px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
 }
 
 .timer-value {
-  font-size: 28px;
+  font-size: 24px;
   font-weight: 700;
   color: white;
+  margin: 2px 0;
 }
 
 .timer-votes {
-  font-size: 12px;
-  color: rgba(255, 255, 255, 0.7);
-  margin-top: 4px;
+  font-size: 11px;
+  color: rgba(255, 255, 255, 0.5);
+  margin-top: 2px;
 }
 
-/* Timer Gradient Definition */
-.voting-interface-v2::before {
-  content: '';
-  position: absolute;
-  width: 0;
-  height: 0;
+/* Waiting for vote state */
+.waiting-for-vote {
+  text-align: center;
+  padding: 80px 20px;
 }
 
-.voting-interface-v2 svg {
-  position: absolute;
-  width: 0;
-  height: 0;
-}
-
-/* Category Selector */
-.category-selector {
-  margin-bottom: 24px;
-}
-
-.category-selector h3 {
-  font-size: 16px;
-  font-weight: 600;
+.waiting-for-vote h2 {
+  font-size: 28px;
+  font-weight: 700;
   margin-bottom: 16px;
-  color: rgba(255, 255, 255, 0.9);
+  color: rgba(255, 255, 255, 0.8);
 }
 
-.category-tabs {
-  display: flex;
-  gap: 12px;
-  margin-bottom: 24px;
+.waiting-for-vote p {
+  font-size: 16px;
+  color: rgba(255, 255, 255, 0.5);
 }
 
-.category-tab {
-  padding: 12px 24px;
-  background: rgba(255, 255, 255, 0.05);
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  color: rgba(255, 255, 255, 0.7);
-  border-radius: 12px;
-  font-weight: 600;
-  cursor: pointer;
-  transition: all 0.2s;
-  display: flex;
-  align-items: center;
-  gap: 8px;
-}
-
-.category-tab:hover {
-  background: rgba(255, 255, 255, 0.1);
-  color: white;
-}
-
-.category-tab.active {
-  background: linear-gradient(135deg, #6B46C1 0%, #9333EA 100%);
-  color: white;
-  border-color: transparent;
-}
-
-/* Voting Grid */
+/* Voting Grid - Always 4 cards */
 .voting-grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
@@ -514,16 +461,15 @@
 }
 
 .vote-option-card {
-  background: linear-gradient(135deg, rgba(139, 92, 246, 0.1), rgba(147, 51, 234, 0.05));
-  border: 3px solid rgba(139, 92, 246, 0.3);
-  border-radius: 20px;
-  padding: 28px;
+  background: rgba(39, 41, 61, 0.4);
+  border: 2px solid rgba(139, 92, 246, 0.2);
+  border-radius: 16px;
+  padding: 24px;
   cursor: pointer;
   transition: all 0.3s ease;
   text-align: center;
   position: relative;
   overflow: hidden;
-  box-shadow: 0 5px 20px rgba(139, 92, 246, 0.2);
 }
 
 .vote-option-card::before {
@@ -533,16 +479,10 @@
   left: -100%;
   width: 300%;
   height: 300%;
-  background: radial-gradient(circle, rgba(147, 51, 234, 0.3) 0%, transparent 50%);
-  animation: rotateGradient 4s linear infinite;
+  background: radial-gradient(circle, rgba(147, 51, 234, 0.15) 0%, transparent 50%);
   opacity: 0;
   transition: opacity 0.3s;
   pointer-events: none;
-}
-
-@keyframes rotateGradient {
-  0% { transform: rotate(0deg); }
-  100% { transform: rotate(360deg); }
 }
 
 .vote-option-card:hover::before {
@@ -550,34 +490,26 @@
 }
 
 .vote-option-card:hover {
-  background: linear-gradient(135deg, rgba(139, 92, 246, 0.2), rgba(147, 51, 234, 0.1));
-  border-color: rgba(139, 92, 246, 0.6);
-  transform: translateY(-6px) scale(1.03);
-  box-shadow: 0 20px 40px rgba(139, 92, 246, 0.4);
+  background: rgba(39, 41, 61, 0.6);
+  border-color: rgba(139, 92, 246, 0.4);
+  transform: translateY(-4px);
+  box-shadow: 0 10px 30px rgba(139, 92, 246, 0.2);
 }
 
 .vote-option-card.selected {
-  background: linear-gradient(135deg, rgba(139, 92, 246, 0.3), rgba(147, 51, 234, 0.2));
-  border-color: #8B5CF6;
-  animation: selectedPulse 1.5s ease-in-out infinite;
-  box-shadow: 0 0 40px rgba(139, 92, 246, 0.5);
-}
-
-@keyframes selectedPulse {
-  0%, 100% { 
-    box-shadow: 0 0 30px rgba(139, 92, 246, 0.5);
-    transform: scale(1);
-  }
-  50% { 
-    box-shadow: 0 0 50px rgba(139, 92, 246, 0.7);
-    transform: scale(1.02);
-  }
+  background: rgba(147, 51, 234, 0.15);
+  border-color: #9333EA;
+  box-shadow: 0 0 20px rgba(147, 51, 234, 0.3);
 }
 
 .vote-option-card.winning {
   border-color: #FCD34D;
-  background: linear-gradient(135deg, rgba(252, 211, 77, 0.2), rgba(251, 191, 36, 0.1));
-  box-shadow: 0 0 40px rgba(252, 211, 77, 0.4);
+  background: rgba(252, 211, 77, 0.08);
+}
+
+.vote-option-card:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
 }
 
 .vote-option-content {
@@ -586,30 +518,28 @@
 }
 
 .vote-option-card h4 {
-  margin: 0 0 20px 0;
-  font-size: 20px;
-  font-weight: 800;
+  margin: 0 0 16px 0;
+  font-size: 16px;
+  font-weight: 700;
   color: white;
   text-transform: uppercase;
-  letter-spacing: 1px;
+  letter-spacing: 0.5px;
 }
 
 .vote-progress {
   width: 100%;
-  height: 8px;
+  height: 6px;
   background: rgba(255, 255, 255, 0.1);
-  border-radius: 4px;
+  border-radius: 3px;
   overflow: hidden;
-  margin-bottom: 16px;
-  box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.3);
+  margin-bottom: 14px;
 }
 
 .vote-progress-bar {
   height: 100%;
-  background: linear-gradient(90deg, #8B5CF6, #9333EA, #A855F7);
-  border-radius: 4px;
+  background: linear-gradient(90deg, #8B5CF6, #9333EA);
+  border-radius: 3px;
   transition: width 0.5s ease;
-  box-shadow: 0 0 20px rgba(139, 92, 246, 0.6);
   position: relative;
 }
 
@@ -620,7 +550,7 @@
   left: 0;
   right: 0;
   bottom: 0;
-  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
   animation: shimmer 2s infinite;
 }
 
@@ -636,20 +566,20 @@
 }
 
 .vote-count {
-  font-size: 16px;
-  color: white;
-  font-weight: 700;
+  font-size: 14px;
+  color: rgba(255, 255, 255, 0.7);
+  font-weight: 600;
 }
 
 .winning-badge {
-  font-size: 24px;
+  font-size: 20px;
   animation: crownBounce 1s ease infinite;
 }
 
 @keyframes crownBounce {
   0%, 100% { transform: translateY(0) rotate(0deg); }
-  25% { transform: translateY(-3px) rotate(-5deg); }
-  75% { transform: translateY(-3px) rotate(5deg); }
+  25% { transform: translateY(-2px) rotate(-5deg); }
+  75% { transform: translateY(-2px) rotate(5deg); }
 }
 
 /* Effect Notifications */
@@ -672,7 +602,7 @@
   font-weight: 700;
   font-size: 18px;
   box-shadow: 0 20px 40px rgba(139, 92, 246, 0.4);
-  animation: notificationSlide 0.5s ease, notificationPulse 2s ease infinite;
+  animation: notificationSlide 0.5s ease;
   white-space: nowrap;
 }
 
@@ -687,17 +617,12 @@
   }
 }
 
-@keyframes notificationPulse {
-  0%, 100% { transform: scale(1); }
-  50% { transform: scale(1.05); }
-}
-
 /* Chat Sidebar */
 .chat-sidebar {
   width: 350px;
-  background: rgba(255, 255, 255, 0.05);
+  background: rgba(39, 41, 61, 0.3);
   border-radius: 16px;
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.05);
   display: flex;
   flex-direction: column;
   height: calc(100vh - 120px);
@@ -710,7 +635,7 @@
   justify-content: space-between;
   align-items: center;
   padding: 20px;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
 }
 
 .chat-header h3 {
@@ -760,25 +685,25 @@
 
 .username {
   font-weight: 600;
-  color: #8B5CF6;
+  color: #00b9db;
 }
 
 .timestamp {
   font-size: 12px;
-  color: rgba(255, 255, 255, 0.5);
+  color: rgba(255, 255, 255, 0.4);
 }
 
 .message-content {
   font-size: 14px;
   line-height: 1.4;
-  color: rgba(255, 255, 255, 0.9);
+  color: rgba(255, 255, 255, 0.8);
 }
 
 .chat-input {
   display: flex;
   gap: 12px;
   padding: 20px;
-  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
 }
 
 .chat-input input {
@@ -792,7 +717,7 @@
 }
 
 .chat-input input::placeholder {
-  color: rgba(255, 255, 255, 0.5);
+  color: rgba(255, 255, 255, 0.4);
 }
 
 .send-button {
@@ -816,7 +741,7 @@
 }
 
 .chat-messages::-webkit-scrollbar-track {
-  background: rgba(255, 255, 255, 0.05);
+  background: rgba(255, 255, 255, 0.02);
 }
 
 .chat-messages::-webkit-scrollbar-thumb {
@@ -825,7 +750,7 @@
 }
 
 .chat-messages::-webkit-scrollbar-thumb:hover {
-  background: rgba(255, 255, 255, 0.2);
+  background: rgba(255, 255, 255, 0.15);
 }
 
 /* Responsive Design */
@@ -836,6 +761,9 @@
   
   .chat-sidebar {
     width: 100%;
+    height: 400px;
+    position: relative;
+    top: 0;
   }
   
   .voting-grid {
@@ -855,5 +783,14 @@
   
   .voting-grid {
     grid-template-columns: 1fr;
+  }
+  
+  .voting-header {
+    flex-direction: column;
+    gap: 24px;
+  }
+  
+  .voting-title-section {
+    padding-right: 0;
   }
 }
